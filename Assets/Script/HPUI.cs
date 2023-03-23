@@ -7,16 +7,23 @@ public class HPUI : MonoBehaviour
     [SerializeField]
     GameObject _hpPrefab;
 
-    Vector3 startPos = new Vector3(-8.0f, 4.0f, 0.0f);
-
     CharacterData _dataManager;
     private void Awake()
     {
         _dataManager = GameObject.Find("Data").GetComponent<CharacterData>();
         SetHPUI();
     }
-    void SetHPUI()
+    public void ResetHPUI()
     {
+        int count = _dataManager.GetHP();
+
+        for (int i = 0; i < count; ++i)
+            Destroy(GameObject.Find(_hpPrefab.name + "(Clone)"));
+    }
+    public void SetHPUI()
+    {
+        Vector3 startPos = new Vector3(-8.0f, 4.0f, 0.0f);
+
         int count = _dataManager.GetHP();
 
         for (int i = 0; i < count; ++i)

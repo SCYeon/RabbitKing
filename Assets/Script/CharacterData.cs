@@ -12,8 +12,20 @@ public class CharacterData : MonoBehaviour
 
     bool _crwon = false;
 
+    HPUI _hpManager;
+
+    private void Awake()
+    {
+        _hpManager = GameObject.Find("Main Camera").GetComponent<HPUI>();
+    }
     public void AddHP() { ++_hp; }
     public int GetHP() { return _hp; }
+    public void DecreaseHP() 
+    { 
+//        --_hp;
+        _hpManager.ResetHPUI();
+//        _hpManager.SetHPUI(); 
+    }
     public void AddCoin(int coin) { _coin += coin; }
     public bool UseCoin(int coin) 
     {
