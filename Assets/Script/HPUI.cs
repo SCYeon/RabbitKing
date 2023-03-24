@@ -1,36 +1,42 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class HPUI : MonoBehaviour
 {
     [SerializeField]
-    GameObject _hpPrefab;
+    GameObject[] _hp = new GameObject[5];
+
+    int _count = 0;
+    int _index = 4;
 
     CharacterData _dataManager;
+
     private void Awake()
     {
         _dataManager = GameObject.Find("Data").GetComponent<CharacterData>();
         SetHPUI();
+        _index = _count;
     }
-    public void ResetHPUI()
-    {
-        int count = _dataManager.GetHP();
 
-        for (int i = 0; i < count; ++i)
-            Destroy(GameObject.Find(_hpPrefab.name + "(Clone)"));
+    public void DecreaseHPUI()
+    {
+        --_index;
+        if (_index >= 0)
+        {
+            _hp[_index].SetActive(false);
+        }
     }
+
+    public int GetIndex() { return _index; }
     public void SetHPUI()
     {
-        Vector3 startPos = new Vector3(-8.0f, 4.0f, 0.0f);
+        _count = _dataManager.GetHP();
 
-        int count = _dataManager.GetHP();
-
-        for (int i = 0; i < count; ++i)
+        for (int i = 0; i < _count; ++i)
         {
-            GameObject hpPrefab = Instantiate(_hpPrefab);
-            hpPrefab.transform.position = startPos;
-            startPos += new Vector3(0.7f, 0.0f, 0.0f);
+            _hp[i].SetActive(true);            
         }
     }
 }

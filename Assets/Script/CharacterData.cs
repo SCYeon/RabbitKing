@@ -20,25 +20,11 @@ public class CharacterData : MonoBehaviour
     }
     public void AddHP() { ++_hp; }
     public int GetHP() { return _hp; }
-    public void DecreaseHP() 
-    { 
-//        --_hp;
-        _hpManager.ResetHPUI();
-//        _hpManager.SetHPUI(); 
-    }
-    public void AddCoin(int coin) { _coin += coin; }
-    public bool UseCoin(int coin) 
-    {
-        int tmp_coin = _coin - coin;
 
-        if(tmp_coin >= 0)
-        {
-            _coin = tmp_coin;
-            return true;
-        }
-        return false;
-    }
+    public void AddCoin(int coin) { _coin += coin; }
+    public void UseCoin(int coin) { _coin -= coin; }
     public int GetCoin() { return _coin; }
+
     public void BuyStage(int num) 
     {
         if (num == 2)
