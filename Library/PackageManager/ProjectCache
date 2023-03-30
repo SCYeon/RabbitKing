@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638152450920000000
+      ticks: 638157686516493639
     m_Hash: 389266334
   m_LockFileStatus:
     m_FilePath: C:/_workspace/[Unity2D] RabbitKing/Packages/packages-lock.json
@@ -13,7 +13,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638152776747177866
+      ticks: 638157686516654658
     m_Hash: 3990033450
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}

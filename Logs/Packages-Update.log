@@ -60,3 +60,20 @@ The following packages were updated:
   com.unity.2d.psdimporter from version 4.3.1 to 6.0.6
   com.unity.2d.spriteshape from version 5.3.0 to 7.0.6
   com.unity.timeline from version 1.4.8 to 1.6.4
+
+=== Thu Mar 30 18:55:54 2023
+
+Packages were changed.
+Update Mode: resetToDefaultDependencies
+
+The following packages were added:
+  com.unity.visualscripting@1.7.8
+The following packages were updated:
+  com.unity.test-framework from version 1.1.33 to 1.1.31
+The following packages were removed:
+  com.unity.2d.animation@7.0.8
+  com.unity.2d.pixel-perfect@5.0.1
+  com.unity.2d.psdimporter@6.0.6
+  com.unity.2d.sprite@1.0.0
+  com.unity.2d.spriteshape@7.0.6
+  com.unity.2d.tilemap@1.0.0
