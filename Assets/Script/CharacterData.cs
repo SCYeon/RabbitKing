@@ -33,7 +33,7 @@ public class CharacterData : MonoBehaviour
             _stage3 = true;
     }
     public void BuyCrwon() { _crwon = true; }
-
+    public bool CheckCrwon() { return _crwon; }
     public int CheckStage()
     {
         /* 

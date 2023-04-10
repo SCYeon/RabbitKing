@@ -4,15 +4,32 @@ using UnityEngine;
 
 public class Game2Manager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    HPUI _hpManager;
+    Game2UI _gameUI;
+
+    public bool _isPlay = false;
+
+    private void Awake()
     {
-        
+        _isPlay = true;
+        _hpManager = GameObject.Find("Main Camera").GetComponent<HPUI>();
+        _gameUI = GameObject.Find("Canvas").GetComponent<Game2UI>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if(_hpManager.GetHP() <= 0)
+        {
+            _gameUI.Result(2);
+            _isPlay = false;
+        }
+    }
+    public void ResultCalc()
+    {
+        _isPlay = false;
+        if (_hpManager.GetHP() >= 3)
+            _gameUI.Result(0);
+        else if (_hpManager.GetHP() > 0)
+            _gameUI.Result(1);
     }
 }

@@ -20,6 +20,14 @@ public class StoreUI : MonoBehaviour
         _dataManager = GameObject.Find("Data").GetComponent<CharacterData>();
         _coinCount.text = _dataManager.GetCoin().ToString();
     }
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            _dataManager.AddCoin(1000);
+            _coinCount.text = _dataManager.GetCoin().ToString();
+        }
+    }
 
     void ItemSet(string item)
     {
@@ -63,6 +71,7 @@ public class StoreUI : MonoBehaviour
         else
         {
             _dataManager.UseCoin(coin);
+            _coinCount.text = _dataManager.GetCoin().ToString();
             Debug.Log("구매 완료");
             return true;
         }

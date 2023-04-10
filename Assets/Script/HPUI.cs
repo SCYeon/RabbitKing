@@ -19,6 +19,7 @@ public class HPUI : MonoBehaviour
         SetHPUI();
         _index = _count;
     }
+    public int GetHP() { return _index; }
 
     public void DecreaseHPUI()
     {
