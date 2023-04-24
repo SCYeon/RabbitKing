@@ -6,6 +6,10 @@ public class DataManager : MonoBehaviour
 {
     private void Awake()
     {
-        DontDestroyOnLoad(this.gameObject);
+        var obj = FindObjectsOfType<DataManager>();
+        if (obj.Length == 1)
+            DontDestroyOnLoad(gameObject);
+        else
+            Destroy(gameObject);
     }
 }
