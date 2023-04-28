@@ -14,6 +14,9 @@ public class StoreUI : MonoBehaviour
     [SerializeField]
     ToggleGroup _toggleGroup;
 
+    [SerializeField]
+    TextMeshProUGUI _messageText; 
+
     CharacterData _dataManager;
     void Awake()
     {
@@ -65,14 +68,16 @@ public class StoreUI : MonoBehaviour
 
         if(pre_coin.CompareTo(coin) < 0)
         {
-            Debug.Log("구매 불가");
+            _messageText.fontSize = 24;
+            _messageText.text = "Not enough \nMoney";
             return false;
         }
         else
         {
             _dataManager.UseCoin(coin);
             _coinCount.text = _dataManager.GetCoin().ToString();
-            Debug.Log("구매 완료");
+            _messageText.fontSize = 36;
+            _messageText.text = "Thanks";
             return true;
         }
     }
